@@ -1,0 +1,17 @@
+{
+    "search_queries": [
+        "Playwright Python",
+        "Pytest automation",
+        "Selenium vs Playwright"
+    ],
+    "users": {
+        "valid_user": {
+            "username": "rahulshettyacademy",
+            "password": "learning"
+        },
+        "locked_out_user": {
+            "username": "locked_out_user",
+            "password": "secret_sauce"
+        }
+    }
+}

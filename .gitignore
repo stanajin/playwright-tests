@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+.venv
+env/
+venv/
+.pytest_cache/
+playwright-report/
+test-results/
+screenshots/
+videos/
+reports/
+output.txt
+output_utf8.txt
+error_log.txt
