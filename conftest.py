@@ -31,10 +31,9 @@ def pytest_html_report_title(report):
     report.title = "Playwright Test Automation Report"
 
 
-def pytest_sessionstart(session):
-    """Add custom environment info to HTML report - runs after pytest-metadata"""
-    # Add browser information to metadata
-    if hasattr(session.config, '_metadata'):
-        session.config._metadata["Browsers"] = "Chromium, Firefox, WebKit"
-        session.config._metadata["Test Framework"] = "Playwright + Pytest"
+@pytest.hookimpl(tryfirst=True)
+def pytest_metadata(metadata):
+    """Add custom environment info to HTML report"""
+    metadata["Browsers"] = "Chromium, Firefox, WebKit"
+    metadata["Test Framework"] = "Playwright + Pytest"
 
