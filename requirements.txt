@@ -1,4 +1,5 @@
 pytest-playwright
 pytest-xdist
+pytest-html
 python-dotenv
 future
