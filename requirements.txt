@@ -3,3 +3,4 @@ pytest-xdist
 pytest-html
 python-dotenv
 future
+axe-playwright-python
