@@ -25,3 +25,8 @@ def browser_context_args(browser_context_args):
         }
     }
 
+
+def pytest_html_report_title(report):
+    """Customize the HTML report title"""
+    report.title = "Playwright Test Automation Report"
+
