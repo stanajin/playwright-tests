@@ -31,13 +31,10 @@ def pytest_html_report_title(report):
     report.title = "Playwright Test Automation Report"
 
 
-def pytest_configure(config):
-    """Add custom environment info to HTML report"""
-    # Get existing metadata or create new dict
-    if not hasattr(config, '_metadata'):
-        config._metadata = {}
-    
-    # Add browser information to existing metadata
-    config._metadata["Browsers"] = "Chromium, Firefox, WebKit"
-    config._metadata["Test Framework"] = "Playwright + Pytest"
+def pytest_sessionstart(session):
+    """Add custom environment info to HTML report - runs after pytest-metadata"""
+    # Add browser information to metadata
+    if hasattr(session.config, '_metadata'):
+        session.config._metadata["Browsers"] = "Chromium, Firefox, WebKit"
+        session.config._metadata["Test Framework"] = "Playwright + Pytest"
 
