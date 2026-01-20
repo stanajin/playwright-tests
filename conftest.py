@@ -30,3 +30,9 @@ def pytest_html_report_title(report):
     """Customize the HTML report title"""
     report.title = "Playwright Test Automation Report"
 
+
+def pytest_configure(config):
+    """Add custom environment info to HTML report"""
+    config._metadata["Browsers"] = "Chromium, Firefox, WebKit"
+    config._metadata["Test Framework"] = "Playwright + Pytest"
+
