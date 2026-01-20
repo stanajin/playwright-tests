@@ -1,0 +1,32 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.14.2, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\nimba\AppData\Local\Programs\Python\Python314\python.exe
+cachedir: .pytest_cache
+baseurl: https://google.com
+metadata: {'Python': '3.14.2', 'Platform': 'Windows-11-10.0.26200-SP0', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'base-url': '2.1.0', 'html': '4.1.1', 'metadata': '3.1.1', 'playwright': '0.7.2', 'xdist': '3.8.0'}, 'JAVA_HOME': 'C:\\Program Files\\Java\\jdk-16.0.2', 'Base URL': 'https://google.com'}
+rootdir: C:\Users\nimba\playwright-tests
+configfile: pytest.ini
+plugins: base-url-2.1.0, html-4.1.1, metadata-3.1.1, playwright-0.7.2, xdist-3.8.0
+collecting ... collected 1 item
+
+tests/test_accessibility.py::test_google_accessibility[chromium] FAILED
+
+================================== FAILURES ===================================
+_____________________ test_google_accessibility[chromium] _____________________
+
+page = <Page url='https://www.google.com/'>
+axe = <axe_playwright_python.sync_playwright.Axe object at 0x00000242D62B42F0>
+
+    def test_google_accessibility(page: Page, axe):
+        """Test Google homepage for accessibility violations"""
+        page.goto("https://google.com")
+    
+        # Run accessibility scan
+>       results = axe.run()
+                  ^^^^^^^^^
+E       TypeError: Axe.run() missing 1 required positional argument: 'page'
+
+tests\test_accessibility.py:13: TypeError
+- Generated html report: file:///C:/Users/nimba/playwright-tests/reports/report.html -
+=========================== short test summary info ===========================
+FAILED tests/test_accessibility.py::test_google_accessibility[chromium] - Typ...
+============================== 1 failed in 7.03s ==============================

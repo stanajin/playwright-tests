@@ -1,7 +1,6 @@
 import os
 import pytest
 from dotenv import load_dotenv
-from axe_playwright_python.sync_playwright import Axe
 
 # Load environment variables
 load_dotenv()
@@ -26,8 +25,3 @@ def browser_context_args(browser_context_args):
         }
     }
 
-
-@pytest.fixture
-def axe(page):
-    """Fixture to run accessibility scans on pages"""
-    return Axe(page)
