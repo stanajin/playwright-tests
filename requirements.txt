@@ -4,3 +4,4 @@ pytest-html
 python-dotenv
 future
 axe-playwright-python
+selenium
