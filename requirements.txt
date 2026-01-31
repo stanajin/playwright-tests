@@ -5,3 +5,5 @@ python-dotenv
 future
 axe-playwright-python
 selenium
+mysql-connector-python
+behave
