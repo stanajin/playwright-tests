@@ -40,15 +40,25 @@ print(row)
 print(row[3])                                                              
 row_all = cursor.fetchall()                                                
 print(row_all)                                                             
-summation = 0                                                              
+summation = 0    
+
+def test_user_record_exists(cursor):
+    cursor.execute("SELECT * FROM CustomerInfo WHERE CustomerID=1")
+    result = cursor.fetchone()
+    print(result)
+    assert result is not None
+    print("User record exists check passed")
+
+test_user_record_exists(cursor)
+
 
 for rows in row_all:                                                       
-    summation += row[3]                                                    
+    summation += rows[3]                                                    
     print(summation)  
-    if summation == 33:
+    if summation == 35:
         print("Assertion passed") 
     else:
-        print("Assertion failed")                                                  
+        print("Assertion failed")
 try:                                                                       
     # Update name where age is 35                                          
     update_query = "UPDATE CustomerInfo SET Name = %s WHERE Age = %s"      
@@ -68,5 +78,4 @@ except Exception as e:
     print("Transaction failed:", e)                                        
                                                                            
 finally:                                                                   
-    conn.close()                                                           
-conn.close()
+    conn.close()
